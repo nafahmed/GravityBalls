@@ -32,7 +32,9 @@ void draw() {
  while(i<count){
   ellipse(x[i], y[i], diam[i], diam[i]);
   
- 
+ if(dist(x[i], y[i], mouseX, mouseY) < diam[i]/2){
+  diam[i]= diam[i]+5; 
+ }
 
 velY[i] = velY[i] + a[i];
 y[i] += velY[i];
