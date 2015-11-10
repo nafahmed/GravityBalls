@@ -1,3 +1,15 @@
+
+
+//CREATE A NEW BRANCH and see if you can get the balls in your code to recognize when they are in contact with your mouse cursor.
+//Some hints:
+//* There is a distance formula. You can find it in the reference
+//* Do a quick sketch to see how the distance between a point and the center of a circle relate to the size of the circle
+//* Have a simple way of displaying whether the mouse is in contact with a circle, at least at first. Changing colors or printing a word to the console is a good way to approach this.
+
+
+
+
+
 //declare variables
 int count = 30;
 float [] x= new float [count];
@@ -32,7 +44,9 @@ void draw() {
  while(i<count){
   ellipse(x[i], y[i], diam[i], diam[i]);
   
- 
+ if(dist(x[i], y[i], mouseX, mouseY) < diam[i]/2){
+  diam[i]= diam[i]+3; 
+ }
 
 velY[i] = velY[i] + a[i];
 y[i] += velY[i];
